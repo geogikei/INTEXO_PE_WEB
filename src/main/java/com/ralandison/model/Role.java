@@ -1,8 +1,9 @@
 package com.ralandison.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;

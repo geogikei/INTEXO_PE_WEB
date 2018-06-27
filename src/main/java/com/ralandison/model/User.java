@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
 @Entity
+//@Table(name = "USER")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {

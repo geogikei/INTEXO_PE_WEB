@@ -1,0 +1,14 @@
+<h1>Users list</h1>
+
+
+<ul class="users">
+  <li *ngFor="let u of users">
+    <h4>id : {{u.id}}</h4>
+    <h4>user name : {{u.userName}}</h4>
+    <h4>first name : {{u.firstName}}</h4>
+    <h4>last name : {{u.lastName}}</h4>
+    <h4>email : {{u.email}}</h4>
+    <h4>role id: {{u.role.id}}</h4>
+    <h4>role id: {{u.role.role}}</h4>
+  </li>
+</ul>

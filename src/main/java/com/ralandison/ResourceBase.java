@@ -64,6 +64,15 @@ public abstract class ResourceBase<T,K> {
         return query.getResultList();
     }
 
+    public T readBy2FieldsValues(String fieldNameA,Object valueA, String fieldNameB,Object valueB){
+        Query query = em.createNativeQuery("SELECT * FROM "+clazz.getSimpleName().toUpperCase()+" where ?1=?2 and ?3=?4",clazz);
+        query.setParameter(1,fieldNameA);
+        query.setParameter(2,valueA);
+        query.setParameter(1,fieldNameB);
+        query.setParameter(2,valueB);
+        return ((T) query.getSingleResult());
+    }
+
     //@GET
     public List<T> getList() throws SQLException, NamingException {
         List records = getTixQuery();

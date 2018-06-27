@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -15,8 +16,9 @@ import java.util.List;
 
 import static java.util.Collections.singletonList;
 
-@Path("/user")
+@Path("/users")
 @Produces("application/json")
+@Stateless
 public class UserResource extends ResourceBase<User, Integer> {
 
     public UserResource() {
@@ -46,5 +48,13 @@ public class UserResource extends ResourceBase<User, Integer> {
     @Override
     protected void updateQuery(User user, int id) throws SQLException, NamingException {
 
+    }
+
+    public void authenticate(String username, String password) throws Exception{
+        if (readBy2FieldsValues("userName",username,"password",password)!=null){
+
+        }else {
+            throw new Exception("Login/Mot de passe erronés");
+        }
     }
 }

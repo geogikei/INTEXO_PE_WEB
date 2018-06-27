@@ -1,0 +1,15 @@
+<h1>Number : {{number}}</h1>
+
+<h1>User name : {{username}}<pre>Password : {{password}}</pre></h1>
+
+<form (submit)="connect(usernameField.value,passwordField.value)">
+  <div>
+    <label for="usernameField">User name :</label>
+    <input type="text" id="usernameField" #usernameField>
+    <br>
+    <label for="passwordField">Password :</label>
+    <input type="text" id="passwordField" #passwordField>
+    <br>
+    <button>Login</button>
+  </div>
+</form>
